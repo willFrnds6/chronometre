@@ -1,1 +1,26 @@
 @import "~bootstrap/scss/bootstrap"; 
+
+#chronometre{
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    padding: 10px;
+
+    width: 200px;
+
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.button-green{
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+    width: 100px;
+
+    border: 2px grey solid;
+    border-radius: 5px;
+    background-color: green;
+    color: #fff;
+}
