@@ -17,10 +17,21 @@
         <div id="chronometre">00 : 00 : 00.000</div>
       </div>
 
-      <div class="col-sm-12">
-        <div class="button-green">Démarrer</div>
-      </div>
     </div>
+
+    <div class="bloc-btn">
+      <div *ngIf="!isStarted" (click)="start()" class="button-green">Démarrer</div>
+      <div *ngIf="isStarted" (click)="pause()" class="button-red">Pause</div>
+      <div *ngIf="isStarted && isPaused" class="button-red">Effacer</div>
+      <div *ngIf="isStarted && !isPaused" class="button-grey">Retenir</div>
+    </div>
+
+    <table>
+      <thead>
+        <th>Durée</th>
+        <th>Note</th>
+      </thead>
+    </table>
   </div>
 </body>
 </html>
