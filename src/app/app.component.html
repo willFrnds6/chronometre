@@ -21,9 +21,10 @@
 
     <div class="bloc-btn">
       <div *ngIf="!isStarted" (click)="start()" class="button-green">Démarrer</div>
-      <div *ngIf="isStarted" (click)="pause()" class="button-red">Pause</div>
-      <div *ngIf="isStarted && isPaused" (click)="start" class="button-red">Effacer</div>
+      <div *ngIf="isStarted && !isPaused" (click)="pause()" class="button-red">Pause</div>
+      <div *ngIf="isStarted && isPaused" (click)="start()" class="button-red">Effacer</div>
       <div *ngIf="isStarted && !isPaused" class="button-grey">Retenir</div>
+      <div *ngIf="isStarted && isPaused" class="button-grey">Continuer</div>
     </div>
 
     <table class="table table-bordered table-hover mt-4">
