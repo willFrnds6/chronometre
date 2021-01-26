@@ -50,5 +50,10 @@ export class AppComponent {
   private stopTimer(): void {
     this.pauseTimer();
     this.time = 0;
+
+    for(let i = 0; i < this.timerArray.length; i++){
+      const timerArrayLength : number = this.timerArray.length
+      this.timerArray.splice(i, timerArrayLength);
+    }
   }
 }
