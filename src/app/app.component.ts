@@ -30,7 +30,6 @@ export class AppComponent {
   }
 
   private stopTimer(): void {
-    this.pauseTimer();
     this.time = 0;
 
     this.timerArray = [];
