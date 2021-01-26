@@ -26,6 +26,7 @@
       <div *ngIf="isStarted && !isPaused" (click)="save()" class="button-grey">Retenir</div>
       <div *ngIf="isStarted && isPaused" (click)="start()" class="button-grey">Continuer</div>
     </div>
+    
     <div *ngIf="timerArray.length > 0">
       <table class="table table-bordered table-hover mt-4">
         <thead>

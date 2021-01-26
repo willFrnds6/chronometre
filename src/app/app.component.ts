@@ -32,7 +32,7 @@ export class AppComponent {
   }
 
   public save():void {
-    this.timerArray.push(this.time); 
+    this.saveTimer();
   }
 
   private startTimer():void {
@@ -44,6 +44,7 @@ export class AppComponent {
   private pauseTimer():void {
     if(this.idInterval !== null){
       clearInterval(this.idInterval);
+      this.saveTimer();
     }
   }
 
@@ -51,9 +52,10 @@ export class AppComponent {
     this.pauseTimer();
     this.time = 0;
 
-    for(let i = 0; i < this.timerArray.length; i++){
-      const timerArrayLength : number = this.timerArray.length
-      this.timerArray.splice(i, timerArrayLength);
-    }
+    this.timerArray = [];
+  }
+
+  private saveTimer():void {
+    this.timerArray.push(this.time); 
   }
 }
