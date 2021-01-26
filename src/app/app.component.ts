@@ -33,7 +33,7 @@ export class AppComponent {
     this.timerArray.push(this.time); 
   }
 
-  
+
 
   public start():void {
     this.isStarted = true;
@@ -59,5 +59,11 @@ export class AppComponent {
     this.idInterval = setInterval(() => {
       this.time++;
     }, 1);
+  }
+
+  public remove(index : number) : void {
+    if(index >= 0 && index < this.timerArray.length) {
+      this.timerArray.splice(index, 1);
+    }
   }
 }

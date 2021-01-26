@@ -38,9 +38,9 @@
         </thead>
 
         <tbody>
-          <tr *ngFor="let item of timerArray">
+          <tr *ngFor="let item of timerArray, let itemIndex = index">
             <th scope="row">
-              <button type="button" class="btn btn-sm btn-outline-danger">
+              <button (click)="remove(itemIndex)" type="button" class="btn btn-sm btn-outline-danger">
                 x
               </button>
             </th>
