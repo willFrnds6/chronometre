@@ -14,7 +14,7 @@
       </div>
 
       <div class="col-sm-12">
-        <div id="chronometre">00 : 00 : 00.000</div>
+        <div id="chronometre">{{ time }}</div>
       </div>
 
     </div>
@@ -22,9 +22,9 @@
     <div class="bloc-btn">
       <div *ngIf="!isStarted" (click)="start()" class="button-green">Démarrer</div>
       <div *ngIf="isStarted && !isPaused" (click)="pause()" class="button-red">Pause</div>
-      <div *ngIf="isStarted && isPaused" (click)="start()" class="button-red">Effacer</div>
+      <div *ngIf="isStarted && isPaused" (click)="stop()" class="button-red">Effacer</div>
       <div *ngIf="isStarted && !isPaused" class="button-grey">Retenir</div>
-      <div *ngIf="isStarted && isPaused" class="button-grey">Continuer</div>
+      <div *ngIf="isStarted && isPaused" (click)="start()" class="button-grey">Continuer</div>
     </div>
 
     <table class="table table-bordered table-hover mt-4">
