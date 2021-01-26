@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TimeItem } from './time-item';
 //import { start } from 'repl';
 
 @Component({
@@ -13,7 +14,7 @@ export class AppComponent {
   public isPaused = false;
   public time = 0;
   private idInterval : number|null = null;
-  public timerArray : Array <number> = [];
+  public timerArray : Array <TimeItem> = [];
 
   private pauseTimer():void {
     if(this.idInterval !== null){
@@ -30,7 +31,10 @@ export class AppComponent {
   }
 
   private saveTimer():void {
-    this.timerArray.push(this.time); 
+    this.timerArray.push({
+      time : this.time,
+      note : ''
+    }); 
   }
 
 
