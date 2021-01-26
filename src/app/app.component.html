@@ -23,57 +23,40 @@
       <div *ngIf="!isStarted" (click)="start()" class="button-green">Démarrer</div>
       <div *ngIf="isStarted && !isPaused" (click)="pause()" class="button-red">Pause</div>
       <div *ngIf="isStarted && isPaused" (click)="stop()" class="button-red">Effacer</div>
-      <div *ngIf="isStarted && !isPaused" class="button-grey">Retenir</div>
+      <div *ngIf="isStarted && !isPaused" (click)="save()" class="button-grey">Retenir</div>
       <div *ngIf="isStarted && isPaused" (click)="start()" class="button-grey">Continuer</div>
     </div>
+    <div *ngIf="timerArray.length > 0">
+      <table class="table table-bordered table-hover mt-4">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">Duration</th>
+            <th scope="col">Note</th>
+          </tr>
+        </thead>
 
-    <table class="table table-bordered table-hover mt-4">
-      <thead>
-        <tr>
-          <th scope="col"></th>
-          <th scope="col">Duration</th>
-          <th scope="col">Note</th>
-        </tr>
-      </thead>
+        <tbody>
+          <tr *ngFor="let item of timerArray">
+            <th scope="row">
+              <button type="button" class="btn btn-sm btn-outline-danger">
+                x
+              </button>
+            </th>
 
-      <tbody>
-        <tr>
-          <th scope="row">
-            <button type="button" class="btn btn-sm btn-outline-danger">
-              x
-            </button>
-          </th>
+            <td>
+              {{ item }}
+            </td>
 
-          <td>
-            00 : 00 : 10.596
-          </td>
-
-          <td>
-            <div class="form-group">
-              <input type="email" class="form-control">
-            </div>
-          </td>
-        </tr>
-
-        <tr>
-          <th scope="row">
-            <button type="button" class="btn btn-sm btn-outline-danger">
-              x
-            </button>
-          </th>
-
-          <td>
-            00 : 00 : 10.596
-          </td>
-
-          <td>
-            <div class="form-group">
-              <input type="email" class="form-control">
-            </div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+            <td>
+              <div class="form-group">
+                <input type="email" class="form-control">
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </body>
 </html>

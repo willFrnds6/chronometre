@@ -13,6 +13,7 @@ export class AppComponent {
   public isPaused = false;
   public time = 0;
   private idInterval : number|null = null;
+  public timerArray : Array <number> = [];
 
   public start():void {
     this.isStarted = true;
@@ -25,9 +26,13 @@ export class AppComponent {
     this.pauseTimer();
   }
 
-  public stop():void{
+  public stop():void {
     this.stopTimer();
     this.isStarted = false;
+  }
+
+  public save():void {
+    this.timerArray.push(this.time); 
   }
 
   private startTimer():void {
