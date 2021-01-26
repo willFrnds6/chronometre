@@ -20,13 +20,13 @@
     </div>
 
     <div class="bloc-btn">
-      <div *ngIf="!isStarted" (click)="start()" class="button-green">Démarrer</div>
-      <div *ngIf="isStarted && !isPaused" (click)="pause()" class="button-red">Pause</div>
-      <div *ngIf="isStarted && isPaused" (click)="stop()" class="button-red">Effacer</div>
-      <div *ngIf="isStarted && !isPaused" (click)="save()" class="button-grey">Retenir</div>
-      <div *ngIf="isStarted && isPaused" (click)="start()" class="button-grey">Continuer</div>
+      <div *ngIf="!isStarted" (click)="start()" class="button green">Démarrer</div>
+      <div *ngIf="isStarted && !isPaused" (click)="pause()" class="button red">Pause</div>
+      <div *ngIf="isStarted && isPaused" (click)="stop()" class="button red">Effacer</div>
+      <div *ngIf="isStarted && !isPaused" (click)="save()" class="button grey">Retenir</div>
+      <div *ngIf="isStarted && isPaused" (click)="start()" class="button grey">Continuer</div>
     </div>
-    
+
     <div *ngIf="timerArray.length > 0">
       <table class="table table-bordered table-hover mt-4">
         <thead>

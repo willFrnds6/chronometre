@@ -15,6 +15,26 @@ export class AppComponent {
   private idInterval : number|null = null;
   public timerArray : Array <number> = [];
 
+  private pauseTimer():void {
+    if(this.idInterval !== null){
+      clearInterval(this.idInterval);
+      this.saveTimer();
+    }
+  }
+
+  private stopTimer(): void {
+    this.pauseTimer();
+    this.time = 0;
+
+    this.timerArray = [];
+  }
+
+  private saveTimer():void {
+    this.timerArray.push(this.time); 
+  }
+
+  
+
   public start():void {
     this.isStarted = true;
     this.isPaused = false;
@@ -39,23 +59,5 @@ export class AppComponent {
     this.idInterval = setInterval(() => {
       this.time++;
     }, 1);
-  }
-
-  private pauseTimer():void {
-    if(this.idInterval !== null){
-      clearInterval(this.idInterval);
-      this.saveTimer();
-    }
-  }
-
-  private stopTimer(): void {
-    this.pauseTimer();
-    this.time = 0;
-
-    this.timerArray = [];
-  }
-
-  private saveTimer():void {
-    this.timerArray.push(this.time); 
   }
 }

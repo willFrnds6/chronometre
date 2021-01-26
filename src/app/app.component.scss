@@ -25,7 +25,11 @@
     margin-left: auto;
 }
 
-.button-green{
+.button{
+    cursor: pointer;
+}
+
+.green{
     padding: 5px;
     width: 100px;
 
@@ -34,7 +38,7 @@
     background-color: green;
     color: #fff;
 }
-.button-red{
+.red{
     padding: 5px;
     width: 100px;
 
@@ -43,7 +47,7 @@
     background-color: red;
     color: #fff;
 }
-.button-grey{
+.grey{
     padding: 5px;
     width: 100px;
 
