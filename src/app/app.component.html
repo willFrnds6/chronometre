@@ -1,63 +1,53 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body class="text-center">
-  <div class="container">
-    <div class="row">
+<div class="container">
+  <div class="row">
 
-      <div class="col-sm-12">
-        <img class="img-fluid" src="https://www.chronometre-en-ligne.com/images/logo-chronometre-en-ligne.png" alt="site-logo">
-      </div>
-
-      <div class="col-sm-12">
-        <div id="chronometre">{{ time | number : '2.3-3'}}</div><!--le | permet de choisir comment afficher un mombre -->
-      </div>
-
+    <div class="col-sm-12">
+      <img class="img-fluid" src="https://www.chronometre-en-ligne.com/images/logo-chronometre-en-ligne.png" alt="site-logo">
     </div>
 
-    <div class="bloc-btn">
-      <div *ngIf="!isStarted" (click)="start()" class="button green">Démarrer</div>
-      <div *ngIf="isStarted && !isPaused" (click)="pause()" class="button red">Pause</div>
-      <div *ngIf="isStarted && isPaused" (click)="stop()" class="button red">Effacer</div>
-      <div *ngIf="isStarted && !isPaused" (click)="save()" class="button grey">Retenir</div>
-      <div *ngIf="isStarted && isPaused" (click)="start()" class="button grey">Continuer</div>
+    <div class="col-sm-12">
+      <div id="chronometre">{{ time | number : '2.3-3'}}</div><!--le | permet de choisir comment afficher un mombre -->
     </div>
 
-    <div *ngIf="timerArray.length > 0">
-      <table class="table table-bordered table-hover mt-4">
-        <thead>
-          <tr>
-            <th scope="col"></th>
-            <th scope="col">Duration</th>
-            <th scope="col">Note</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <tr *ngFor="let item of timerArray, let itemIndex = index">
-            <th scope="row">
-              <button (click)="remove(itemIndex)" type="button" class="btn btn-sm btn-outline-danger">
-                x
-              </button>
-            </th>
-
-            <td>
-              {{ item.time }}
-            </td>
-
-            <td>
-              <div class="form-group">
-                <input type="text" [(ngModel)]="item.note" class="form-control">
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
   </div>
-</body>
-</html>
+
+  <div class="bloc-btn">
+    <div *ngIf="!isStarted" (click)="start()" class="button green">Démarrer</div>
+    <div *ngIf="isStarted && !isPaused" (click)="pause()" class="button red">Pause</div>
+    <div *ngIf="isStarted && isPaused" (click)="stop()" class="button red">Effacer</div>
+    <div *ngIf="isStarted && !isPaused" (click)="save()" class="button grey">Retenir</div>
+    <div *ngIf="isStarted && isPaused" (click)="start()" class="button grey">Continuer</div>
+  </div>
+
+  <div *ngIf="timerArray.length > 0">
+    <table class="table table-bordered table-hover mt-4">
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">Duration</th>
+          <th scope="col">Note</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let item of timerArray, let itemIndex = index">
+          <th scope="row">
+            <button (click)="remove(itemIndex)" type="button" class="btn btn-sm btn-outline-danger">
+              x
+            </button>
+          </th>
+
+          <td>
+            {{ item.time }}
+          </td>
+
+          <td>
+            <div class="form-group">
+              <input type="text" [(ngModel)]="item.note" class="form-control">
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
